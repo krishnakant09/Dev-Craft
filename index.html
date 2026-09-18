@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevCraft - A modern tutorial and engineering blog featuring in-depth guides on CSS Grid, Flexbox, JavaScript, and resilient web architecture.">
+  <meta name="author" content="Alex Vance">
+  <title>DevCraft — Modern Web Development Tutorials & Insights</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================================================================= -->
+  <!-- 1. STICKY HEADER & RESPONSIVE NAVIGATION                          -->
+  <!-- ================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="DevCraft Home">
+        <span class="logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="url(#logo-grad)" />
+            <path d="M9 11L15 16L9 21" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 21H23" stroke="#A5B4FC" stroke-width="2.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4F46E5" />
+                <stop offset="1" stop-color="#06B6D4" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Dev<span class="logo-accent">Craft</span></span>
+      </a>
+
+      <!-- Primary Navigation Menu -->
+      <nav class="nav-menu" id="primary-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#tutorials" class="nav-link">Tutorials</a></li>
+          <li class="nav-item"><a href="#categories" class="nav-link">Categories</a></li>
+          <li class="nav-item"><a href="#about-author" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#newsletter" class="nav-link">Newsletter</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Controls: Theme Switcher & Mobile Menu Toggle -->
+      <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Header Button (Desktop) -->
+        <a href="#tutorials" class="btn btn-sm btn-primary header-cta">Start Learning</a>
+
+        <!-- Accessible Hamburger Button for Mobile -->
+        <button class="hamburger-btn" id="mobile-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle mobile menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- 2. HERO SECTION WITH CALL-TO-ACTION                               -->
+  <!-- ================================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow-bg" aria-hidden="true"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <!-- Pill Badge -->
+        <div class="badge-pill">
+          <span class="badge-pulse" aria-hidden="true"></span>
+          <span>Practical Web Engineering & Modern Layouts</span>
+        </div>
+
+        <!-- Hero Title -->
+        <h1 class="hero-title">
+          Master Modern Web Development with <span class="gradient-text">Hands-On Guides</span>
+        </h1>
+
+        <!-- Hero Subtitle -->
+        <p class="hero-subtitle">
+          Level up your frontend and full-stack craftsmanship. Clear, real-world tutorials on modern CSS Grid, Flexbox architecture, performant JavaScript, and accessible user interfaces.
+        </p>
+
+        <!-- Hero CTA Button Group -->
+        <div class="hero-cta-group">
+          <a href="#tutorials" class="btn btn-lg btn-primary">
+            <span>Explore Tutorials</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#newsletter" class="btn btn-lg btn-secondary">
+            <span>Join 18k+ Developers</span>
+          </a>
+        </div>
+
+        <!-- Hero Metrics Bar -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-number">120+</span>
+            <span class="metric-label">In-Depth Guides</span>
+          </div>
+          <div class="metric-divider" aria-hidden="true"></div>
+          <div class="metric-item">
+            <span class="metric-number">45k+</span>
+            <span class="metric-label">Monthly Readers</span>
+          </div>
+          <div class="metric-divider" aria-hidden="true"></div>
+          <div class="metric-item">
+            <span class="metric-number">100%</span>
+            <span class="metric-label">Free & Open Source</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Interactive Card Preview -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="code-card-wrapper">
+          <div class="code-card-header">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="card-filename">layout-grid.css</span>
+          </div>
+          <pre class="code-block"><code><span class="code-selector">.modern-layout</span> {
+  <span class="code-prop">display</span>: <span class="code-val">grid</span>;
+  <span class="code-prop">grid-template-columns</span>: <span class="code-val">1fr 340px</span>;
+  <span class="code-prop">gap</span>: <span class="code-val">2.5rem</span>;
+  <span class="code-prop">align-items</span>: <span class="code-val">start</span>;
+}
+
+<span class="code-selector">@media</span> (<span class="code-prop">max-width</span>: <span class="code-val">768px</span>) {
+  <span class="code-selector">.modern-layout</span> {
+    <span class="code-prop">grid-template-columns</span>: <span class="code-val">1fr</span>;
+  }
+}</code></pre>
+          <div class="hero-floating-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Fully Responsive & Fluid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- 3. PRIMARY TWO-COLUMN LAYOUT (MAIN CONTENT + SIDEBAR)             -->
+  <!-- ================================================================= -->
+  <main class="main-wrapper" id="content">
+    <div class="layout-container">
+      
+      <!-- ============================================================= -->
+      <!-- COLUMN 1: MAIN TUTORIALS & ARTICLES GRID                      -->
+      <!-- ============================================================= -->
+      <section class="tutorials-section" id="tutorials" aria-labelledby="tutorials-heading">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <h2 id="tutorials-heading" class="section-title">Recent Tutorials & Guides</h2>
+            <p class="section-desc">Practical, code-first articles designed to level up your development skills.</p>
+          </div>
+
+          <!-- Category Filter Bar -->
+          <div class="category-filters" role="tablist" aria-label="Tutorial categories">
+            <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="css">CSS & Layout</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="javascript">JavaScript</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="architecture">Architecture</button>
+            <button class="filter-btn" role="tab" aria-selected="false" data-filter="performance">Performance</button>
+          </div>
+        </div>
+
+        <!-- Tutorials Card Grid -->
+        <div class="tutorials-grid" id="tutorials-grid">
+          
+          <!-- Tutorial Card 1 -->
+          <article class="tutorial-card" data-category="css">
+            <div class="card-visual card-visual-css">
+              <div class="card-badge badge-css">CSS Grid</div>
+              <span class="read-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                8 min read
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-top">
+                <time datetime="2026-03-12" class="card-date">Mar 12, 2026</time>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="difficulty-level">Intermediate</span>
+              </div>
+              <h3 class="card-title">
+                <a href="#tutorials">Mastering CSS Grid & Flexbox for Production-Grade Layouts</a>
+              </h3>
+              <p class="card-excerpt">
+                Unpack the architectural differences between 1-dimensional Flexbox and 2-dimensional CSS Grid. Learn how to craft bulletproof fluid interfaces without utility bloat.
+              </p>
+              <div class="card-tags">
+                <span class="tag">#cssgrid</span>
+                <span class="tag">#flexbox</span>
+                <span class="tag">#responsive</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="author-mini">
+                <div class="avatar-small">AV</div>
+                <div class="author-mini-text">
+                  <span class="author-name">Alex Vance</span>
+                  <span class="author-role">Staff Engineer</span>
+                </div>
+              </div>
+              <a href="#tutorials" class="card-link" aria-label="Read guide on CSS Grid and Flexbox">Read Guide &rarr;</a>
+            </footer>
+          </article>
+
+          <!-- Tutorial Card 2 -->
+          <article class="tutorial-card" data-category="javascript">
+            <div class="card-visual card-visual-js">
+              <div class="card-badge badge-js">JavaScript</div>
+              <span class="read-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                12 min read
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-top">
+                <time datetime="2026-03-08" class="card-date">Mar 8, 2026</time>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="difficulty-level">Advanced</span>
+              </div>
+              <h3 class="card-title">
+                <a href="#tutorials">Deep Dive into Asynchronous JavaScript & State Resilience</a>
+              </h3>
+              <p class="card-excerpt">
+                A comprehensive guide to Promises, Async Iterators, AbortController, and graceful retry patterns for building resilient frontend network clients.
+              </p>
+              <div class="card-tags">
+                <span class="tag">#javascript</span>
+                <span class="tag">#async</span>
+                <span class="tag">#typescript</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="author-mini">
+                <div class="avatar-small">AV</div>
+                <div class="author-mini-text">
+                  <span class="author-name">Alex Vance</span>
+                  <span class="author-role">Staff Engineer</span>
+                </div>
+              </div>
+              <a href="#tutorials" class="card-link" aria-label="Read guide on Asynchronous JavaScript">Read Guide &rarr;</a>
+            </footer>
+          </article>
+
+          <!-- Tutorial Card 3 -->
+          <article class="tutorial-card" data-category="architecture">
+            <div class="card-visual card-visual-arch">
+              <div class="card-badge badge-arch">Architecture</div>
+              <span class="read-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                15 min read
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-top">
+                <time datetime="2026-03-01" class="card-date">Mar 1, 2026</time>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="difficulty-level">Architectural</span>
+              </div>
+              <h3 class="card-title">
+                <a href="#tutorials">Design Systems from Scratch: Tokens, Theming & Modularity</a>
+              </h3>
+              <p class="card-excerpt">
+                How to structure maintainable CSS design tokens, manage dark/light modes cleanly with CSS variables, and scale component libraries effortlessly.
+              </p>
+              <div class="card-tags">
+                <span class="tag">#designsystems</span>
+                <span class="tag">#cssvariables</span>
+                <span class="tag">#theming</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="author-mini">
+                <div class="avatar-small">AV</div>
+                <div class="author-mini-text">
+                  <span class="author-name">Alex Vance</span>
+                  <span class="author-role">Staff Engineer</span>
+                </div>
+              </div>
+              <a href="#tutorials" class="card-link" aria-label="Read guide on Design Systems">Read Guide &rarr;</a>
+            </footer>
+          </article>
+
+          <!-- Tutorial Card 4 -->
+          <article class="tutorial-card" data-category="performance">
+            <div class="card-visual card-visual-perf">
+              <div class="card-badge badge-perf">Performance</div>
+              <span class="read-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                10 min read
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-top">
+                <time datetime="2026-02-24" class="card-date">Feb 24, 2026</time>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="difficulty-level">Advanced</span>
+              </div>
+              <h3 class="card-title">
+                <a href="#tutorials">Optimizing Core Web Vitals: INP, LCP, and CLS in 2026</a>
+              </h3>
+              <p class="card-excerpt">
+                Practical techniques for diagnosing interaction latency, eliminating layout shifts, and minimizing main-thread blocking to achieve pristine 100/100 Lighthouse scores.
+              </p>
+              <div class="card-tags">
+                <span class="tag">#webvitals</span>
+                <span class="tag">#performance</span>
+                <span class="tag">#lighthouse</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="author-mini">
+                <div class="avatar-small">AV</div>
+                <div class="author-mini-text">
+                  <span class="author-name">Alex Vance</span>
+                  <span class="author-role">Staff Engineer</span>
+                </div>
+              </div>
+              <a href="#tutorials" class="card-link" aria-label="Read guide on Core Web Vitals">Read Guide &rarr;</a>
+            </footer>
+          </article>
+
+          <!-- Tutorial Card 5 -->
+          <article class="tutorial-card" data-category="css">
+            <div class="card-visual card-visual-acc">
+              <div class="card-badge badge-css">Accessibility</div>
+              <span class="read-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                7 min read
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-top">
+                <time datetime="2026-02-18" class="card-date">Feb 18, 2026</time>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="difficulty-level">Beginner</span>
+              </div>
+              <h3 class="card-title">
+                <a href="#tutorials">Building Fully Accessible Forms and Interactive Modals</a>
+              </h3>
+              <p class="card-excerpt">
+                Demystifying WAI-ARIA roles, focus trapping, keyboard navigation, and screen reader announcements to make the modern web welcoming for everyone.
+              </p>
+              <div class="card-tags">
+                <span class="tag">#a11y</span>
+                <span class="tag">#html5</span>
+                <span class="tag">#semantics</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="author-mini">
+                <div class="avatar-small">AV</div>
+                <div class="author-mini-text">
+                  <span class="author-name">Alex Vance</span>
+                  <span class="author-role">Staff Engineer</span>
+                </div>
+              </div>
+              <a href="#tutorials" class="card-link" aria-label="Read guide on Accessible Forms">Read Guide &rarr;</a>
+            </footer>
+          </article>
+
+          <!-- Tutorial Card 6 -->
+          <article class="tutorial-card" data-category="javascript">
+            <div class="card-visual card-visual-modern">
+              <div class="card-badge badge-js">Modern Web</div>
+              <span class="read-time">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                9 min read
+              </span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-top">
+                <time datetime="2026-02-10" class="card-date">Feb 10, 2026</time>
+                <span class="meta-dot" aria-hidden="true">•</span>
+                <span class="difficulty-level">Intermediate</span>
+              </div>
+              <h3 class="card-title">
+                <a href="#tutorials">Vanilla Web Components: Custom Elements in the Real World</a>
+              </h3>
+              <p class="card-excerpt">
+                Ditch heavyweight runtime dependencies. Learn how Native Custom Elements, Shadow DOM, and HTML Templates can build reusable cross-framework widgets.
+              </p>
+              <div class="card-tags">
+                <span class="tag">#webcomponents</span>
+                <span class="tag">#javascript</span>
+                <span class="tag">#shadowdom</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div class="author-mini">
+                <div class="avatar-small">AV</div>
+                <div class="author-mini-text">
+                  <span class="author-name">Alex Vance</span>
+                  <span class="author-role">Staff Engineer</span>
+                </div>
+              </div>
+              <a href="#tutorials" class="card-link" aria-label="Read guide on Vanilla Web Components">Read Guide &rarr;</a>
+            </footer>
+          </article>
+
+        </div>
+
+        <!-- Pagination / Load More -->
+        <div class="load-more-wrap">
+          <button class="btn btn-outline" id="load-more-btn">
+            <span>Load More Articles</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- ============================================================= -->
+      <!-- COLUMN 2: 'ABOUT THE AUTHOR' SIDEBAR                          -->
+      <!-- ============================================================= -->
+      <aside class="sidebar-section" id="sidebar" aria-label="Sidebar">
+        
+        <!-- Sidebar Card 1: About the Author -->
+        <div class="sidebar-card author-card" id="about-author">
+          <div class="author-avatar-wrap">
+            <div class="author-avatar-ring">
+              <div class="author-avatar-inner">
+                <span>AV</span>
+              </div>
+            </div>
+            <span class="author-status-badge" title="Actively Writing & Mentoring"></span>
+          </div>
+
+          <h3 class="author-card-name">Alex Vance</h3>
+          <p class="author-card-title">Staff Software Engineer & Educator</p>
+
+          <p class="author-bio">
+            Passionate about modern CSS architecture, high-performance web systems, and developer ergonomics. 10+ years crafting scalable web applications and empowering developers worldwide.
+          </p>
+
+          <!-- Social Links -->
+          <div class="author-socials" aria-label="Author Social Media Links">
+            <a href="https://github.com" class="social-icon" aria-label="GitHub Profile" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+            </a>
+            <a href="https://twitter.com" class="social-icon" aria-label="Twitter/X Profile" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn Profile" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a href="#newsletter" class="social-icon" aria-label="RSS Feed">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                <circle cx="5" cy="19" r="1"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar Card 2: Newsletter Signup -->
+        <div class="sidebar-card newsletter-card" id="newsletter">
+          <div class="newsletter-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <h3 class="sidebar-title">Join The DevCraft Weekly</h3>
+          <p class="sidebar-text">
+            Get curated engineering deep dives, CSS architecture tips, and frontend news delivered straight to your inbox every Thursday. Zero spam.
+          </p>
+
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <div class="form-group">
+              <label for="subscriber-email" class="sr-only">Email address</label>
+              <input 
+                type="email" 
+                id="subscriber-email" 
+                class="form-input" 
+                placeholder="developer@example.com" 
+                required 
+                autocomplete="email"
+              >
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Subscribe Free</span>
+            </button>
+            <p class="form-feedback" id="newsletter-feedback" role="alert" aria-live="polite"></p>
+          </form>
+          <span class="newsletter-guarantee">🔒 No spam, unsubscribe anytime.</span>
+        </div>
+
+        <!-- Sidebar Card 3: Popular Categories & Topics -->
+        <div class="sidebar-card categories-card" id="categories">
+          <h3 class="sidebar-title">Explore Topics</h3>
+          <ul class="categories-list">
+            <li class="category-item">
+              <a href="#tutorials" class="category-link" data-filter-target="css">
+                <span class="category-name">CSS Grid & Flexbox</span>
+                <span class="category-count">24</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#tutorials" class="category-link" data-filter-target="javascript">
+                <span class="category-name">Modern JavaScript</span>
+                <span class="category-count">38</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#tutorials" class="category-link" data-filter-target="architecture">
+                <span class="category-name">Architecture & Design Systems</span>
+                <span class="category-count">19</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#tutorials" class="category-link" data-filter-target="performance">
+                <span class="category-name">Web Performance</span>
+                <span class="category-count">15</span>
+              </a>
+            </li>
+            <li class="category-item">
+              <a href="#tutorials" class="category-link" data-filter-target="css">
+                <span class="category-name">Accessibility (a11y)</span>
+                <span class="category-count">12</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sidebar Card 4: Community / GitHub Star -->
+        <div class="sidebar-card promo-card">
+          <span class="promo-badge">Open Source</span>
+          <h3 class="promo-title">DevCraft Template Repository</h3>
+          <p class="promo-text">Use this semantic, responsive template for your own developer blog or portfolio. Star on GitHub!</p>
+          <a href="https://github.com" class="btn btn-sm btn-outline btn-block" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span>Star on GitHub</span>
+          </a>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- 4. PROFESSIONAL FOOTER                                            -->
+  <!-- ================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Footer Multi-Column Grid -->
+      <div class="footer-grid">
+        
+        <!-- Column 1: Brand & Bio -->
+        <div class="footer-col footer-col-brand">
+          <a href="#hero" class="brand-logo footer-logo" aria-label="DevCraft Home">
+            <span class="logo-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="url(#footer-grad)" />
+                <path d="M9 11L15 16L9 21" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 21H23" stroke="#A5B4FC" stroke-width="2.5" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="footer-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#4F46E5" />
+                    <stop offset="1" stop-color="#06B6D4" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <span class="logo-text">Dev<span class="logo-accent">Craft</span></span>
+          </a>
+          <p class="footer-brand-desc">
+            Empowering modern frontend and full-stack software engineers through practical, accessible, and deep-dive technical tutorials.
+          </p>
+          <div class="footer-status">
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span class="status-text">All systems operational & updated</span>
+          </div>
+        </div>
+
+        <!-- Column 2: Tutorials & Roadmaps -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Learning Guides</h4>
+          <ul class="footer-links">
+            <li><a href="#tutorials">CSS Grid Complete Guide</a></li>
+            <li><a href="#tutorials">Flexbox Patterns 2026</a></li>
+            <li><a href="#tutorials">Async JS & Microtasks</a></li>
+            <li><a href="#tutorials">Web Performance Checklist</a></li>
+            <li><a href="#tutorials">Accessible Form Controls</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Resources & Community -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Interactive Code Sandbox</a></li>
+            <li><a href="#categories">Category Archive</a></li>
+            <li><a href="#about-author">Author Bio & Mentorship</a></li>
+            <li><a href="#newsletter">Weekly Engineering Digest</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">Source Code & Examples</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal & Standards -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Legal & Standards</h4>
+          <ul class="footer-links">
+            <li><a href="#content">Privacy Policy</a></li>
+            <li><a href="#content">Terms of Service</a></li>
+            <li><a href="#content">Code of Conduct</a></li>
+            <li><a href="#content">Accessibility Statement</a></li>
+            <li><a href="#content">Cookie Preferences</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="current-year">2026</span> DevCraft. Crafted with semantic HTML5 & modern CSS3.
+        </p>
+
+        <!-- Back to Top Button -->
+        <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top of page" title="Back to top">
+          <span>Back to top</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
